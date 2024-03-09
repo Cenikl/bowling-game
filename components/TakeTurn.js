@@ -6,7 +6,8 @@ let actualFrames = 1;
 let totalPins = 15;
 let actualTries = 1;
 let actualScore = 0;
-let strikesCount = 5;
+let strikesCount = 14;
+let sparesCount = 14;
 let bonusTry = 3;
 let pins = []
 
@@ -19,7 +20,7 @@ function turn(userPrompt){
         return ;
     }
     if(totalPins - userPrompt < 0){
-        console.log('There are only ${totalPins} left')
+        console.log("There are only"+totalPins+"left");
         return ;
     }
     if(userPrompt == 15 && actualTries == 1){
@@ -41,12 +42,20 @@ function turn(userPrompt){
         actualTries = 1;
         actualFrames++;
     }
+
+    if(userPrompt < 15 && userPrompt > 0){
+        pins.push(parseInt(userPrompt));
+        totalPins -= parseInt(userPrompt);
+        actualTries++;
+    }
+
     if(totalPins == 0 && (actualTries == 2 || actualTries == 3)){
         pins.push(parseInt(userPrompt));
         if(actualTries == 2){
             pins.push(0);
             actualScore = calculateScore();
             actualTries = 1;
+            totalPins = 15;
             actualFrames++;
         }
         if(actualFrames == 5){
@@ -58,19 +67,16 @@ function turn(userPrompt){
             }
             actualScore = calculateScore();
             actualTries = 1;
+            totalPins = 15;
             actualFrames++;
             return ;
         }
     }
 
-    if(userPrompt < 15 && userPrompt > 0){
-        pins.push(parseInt(userPrompt));
-        actualTries++;
-    }
-
     if(actualTries > 3){
         actualScore = calculateScore();
         actualTries = 1 ;
+        totalPins = 15;
         actualFrames++;
     }
 
@@ -78,16 +84,35 @@ function turn(userPrompt){
 function calculateScore(){
     let sum = 0;
     let pinsZero = pins.filter(e => e !== 0);
-    for(let i = 0; i < pinsZero.length; i++){
-        console.log(sum);
-        if(pinsZero[i] == 15 && i < 4){
-            console.log(i)
+
+    for(let i = 0; i < pinsZero.length; i++){  
+        if( (i+3 == pinsZero.length-1) || i+2 == pinsZero.length-1 ){
             sum += 15 + (pinsZero[i+1] || 0) + (pinsZero[i+2] || 0) + (pinsZero[i+3] || 0)
+            console.log(sum)
+            i = pinsZero.length;
+            continue;
+        }
+        if(pinsZero[i] == 15 && strikesCount > 0){
+            console.log()
+            sum += 15 + (pinsZero[i+1] || 0) + (pinsZero[i+2] || 0) + (pinsZero[i+3] || 0)
+            strikesCount--;
+            continue;
+        }
+        if(pinsZero[i] + pinsZero[i+1] + pinsZero[i+2] == 15){
+            sum += 15 +( pinsZero[i+3] || 0) + (pinsZero[i+4] || 0)
+            sparesCount--;
+            i = i+2;
+            continue;
+        }
+        if(pinsZero[i] + pinsZero[i+1] == 15){
+            sum += 15 + (pinsZero[i+2] || 0) + (pinsZero[i+3] || 0)
+            sparesCount--;
+            i = i+1;
             continue;
         }
         sum += pinsZero[i];
     }
-    return sum;
+        return sum;
 }
 
 function initialize(){
@@ -96,7 +121,8 @@ function initialize(){
     actualTries = 1;
     actualScore = 0;
     bonusTry = 3;
-    strikesCount = 5;
+    strikesCount = 14;
+    sparesCount = 14;
     pins = [];
 }
 
