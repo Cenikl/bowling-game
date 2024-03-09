@@ -1,0 +1,23 @@
+{
+  "name": "bowling-game",
+  "version": "1.0.0",
+  "description": "A simple intuitive bownling game",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cenikl/bowling-game"
+  },
+  "author": "Cenikl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cenikl/bowling-game/issues"
+  },
+  "homepage": "https://github.com/Cenikl/bowling-game#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
