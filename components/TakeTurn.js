@@ -86,14 +86,15 @@ function calculateScore(){
     let pinsZero = pins.filter(e => e !== 0);
 
     for(let i = 0; i < pinsZero.length; i++){  
-        if( (i+3 == pinsZero.length-1) || i+2 == pinsZero.length-1 ){
-            sum += 15 + (pinsZero[i+1] || 0) + (pinsZero[i+2] || 0) + (pinsZero[i+3] || 0)
-            console.log(sum)
-            i = pinsZero.length;
-            continue;
-        }
         if(pinsZero[i] == 15 && strikesCount > 0){
-            console.log()
+            if( pins.length >= 13 && (i+2 == pinsZero.length-1 || i+3 == pinsZero.length-1) ){
+                sum += 15 + (pinsZero[i+1] || 0) + (pinsZero[i+2] || 0) + (pinsZero[i+3] || 0)
+                console.log(i+2)
+                console.log(pinsZero.length-1)
+                console.log(sum)
+                i = pinsZero.length;
+                continue;
+            }
             sum += 15 + (pinsZero[i+1] || 0) + (pinsZero[i+2] || 0) + (pinsZero[i+3] || 0)
             strikesCount--;
             continue;
@@ -110,9 +111,17 @@ function calculateScore(){
             i = i+1;
             continue;
         }
-        sum += pinsZero[i];
+        else {
+            sum += (pinsZero[i] || 0) + (pinsZero[i+1]  || 0) + (pinsZero[i+2]  || 0)
+            console.log(pinsZero[i])
+            console.log(pinsZero[i+1])
+            console.log(pinsZero[i+2])
+            i = i + 2;
+            continue;
+        }
+
     }
-        return sum;
+    return sum;
 }
 
 function initialize(){
