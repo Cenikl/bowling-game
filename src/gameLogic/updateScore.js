@@ -6,7 +6,7 @@ import {isSpare, isStrike} from '../utils/turnHelpers.js';
  * @return {Array} returns an array with total score of each frame
  */
 const calculateTotalScore = (data) => {
-  const filteredData = data.filter((e) => e !== 0);
+  const filteredData = data.filter((e) => e !== "spare" && e !== "strike");
   const result = [];
   let sum = 0;
 
@@ -52,7 +52,7 @@ const calculateTotalScore = (data) => {
  */
 const calculateScore = (stats) => {
   let sum = 0;
-  const pinsZero = stats.pins.filter((e) => e !== 0);
+  const pinsZero = stats.pins.filter((e) => e !== "spare" && e !== "strike");
 
   for (let i = 0; i < pinsZero.length; i++) {
     if (pinsZero[i] == 15 && stats.strikesCount > 0) {

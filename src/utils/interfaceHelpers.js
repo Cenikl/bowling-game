@@ -22,7 +22,12 @@ const createBlank = (length) => ' '.repeat(length);
 const createSequenceRow = (data) => {
   let result = ``;
   data.forEach((e) => {
-    if (e.toString().length === 2) {
+    
+    if(e.toString() === "strike"){
+      result += `|${createBlank(1)} X ${createBlank(1)}`;
+    }else if (e.toString() === "strike"){
+      result += `|${createBlank(1)} / ${createBlank(1)}`;
+    }else if (e.toString().length === 2) {
       result += `|${createBlank(1)}${e} ${createBlank(1)}`;
     } else {
       result += `|${createBlank(1)} ${e} ${createBlank(1)}`;

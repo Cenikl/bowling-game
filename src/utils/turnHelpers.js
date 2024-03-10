@@ -88,7 +88,7 @@ function makeSpare(input,data){
       return ;
     }
     if (data.actualTries == 2) {
-      data.pins.push(0);
+      data.pins.push("spare");
       data.actualScore = calculateScore(data);
       data.actualTries = 1;
       data.totalPins = 15;
@@ -133,8 +133,8 @@ function makeStrike(input,data){
       data.actualFrames++;
       return;
     }
-    data.pins.push(0);
-    data.pins.push(0);
+    data.pins.push("strike");
+    data.pins.push("strike");
     data.actualScore = calculateScore(data);
     data.actualTries = 1;
     data.actualFrames++;
