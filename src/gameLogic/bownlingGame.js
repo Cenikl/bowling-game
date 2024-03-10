@@ -3,6 +3,7 @@ import {takeTurn} from './userTurn.js';
 import {bowlingGame} from '../modules/bowlingStats.js';
 import {createGrid} from '../interfaces/createInterface.js';
 import {calculateTotalScore} from './updateScore.js';
+import {isGameCommandValid} from '../utils/turnHelpers.js'
 
 const prompt = promptSync();
 
@@ -24,24 +25,19 @@ function mainGame() {
             `--------------------------------------------`);
     const input = prompt('Number of pins struck: ' );
     takeTurn(input, bowlingGame);
-
     while (bowlingGame.actualFrames >= 6) {
-      console.clear();
       const result = calculateTotalScore(bowlingGame.pins);
       createGrid(bowlingGame.pins, result);
       console.log('Final score : ' + bowlingGame.actualScore);
       console.log('--------------------------------------------');
       
       const answer = prompt('Start a new game ? (Y/N) : ');
-      if (answer.toUpperCase() === 'Y') {
-        bowlingGame.initialize();
-        console.clear();
-      } else if (answer.toUpperCase() === 'N') {
-        bowlingGame.initialize();
-        return false;
-      } else {
-        console.clear();
-        console.log('Invalid command, please try again !');
+      try {
+        if(!isGameCommandValid(answer,bowlingGame)){
+          return false
+        }
+      } catch (error) {
+        console.error('Error :', error.message);
       }
     }
   }

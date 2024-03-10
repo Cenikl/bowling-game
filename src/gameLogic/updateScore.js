@@ -14,7 +14,7 @@ const calculateTotalScore = (data) => {
     if (isStrike(filteredData[i])) {
       // If it scores strike, on the 1st try of the 5th frame
       if ( data.length >= 13 && (i+2 == filteredData.length-1 || i+3 == filteredData.length-1) ) {
-        sum += 15 + filteredData[i+1] + filteredData[i+2] + filteredData[i+3];
+        sum += 15 + (filteredData[i+1] || 0) + (filteredData[i+2] || 0) + (filteredData[i+3] || 0);
         result.push(sum);
         i = filteredData.length;
         continue;
@@ -33,13 +33,12 @@ const calculateTotalScore = (data) => {
       i = i+1;
       continue;
     } else {
-      sum += filteredData[i] + filteredData[i+1] + filteredData[i+2];
+      sum += (filteredData[i] || 0) + (filteredData[i+1] || 0) + (filteredData[i+2] || 0);
       result.push(sum);
       i = i + 2;
       continue;
     }
   }
-
   return result;
 };
 
