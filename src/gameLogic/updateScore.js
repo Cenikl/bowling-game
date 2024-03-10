@@ -46,7 +46,7 @@ const calculateTotalScore = (data) => {
 
 /**
  * Calculate scores of each frame
- * @param {Array} data an array that contains all the user's inputs
+ * @param {object} stats an object which contains the current games stats
  * @return {number} returns an number with the total score
  * @bug Might show incorrect score if a strike or spare in the middle frames 
  * But recalculate it after the next 2 or 3 try are given 
