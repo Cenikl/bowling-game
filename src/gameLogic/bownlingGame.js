@@ -31,6 +31,7 @@ function mainGame() {
       createGrid(bowlingGame.pins, result);
       console.log('Final score : ' + bowlingGame.actualScore);
       console.log('--------------------------------------------');
+      
       const answer = prompt('Start a new game ? (Y/N) : ');
       if (answer.toUpperCase() === 'Y') {
         bowlingGame.initialize();

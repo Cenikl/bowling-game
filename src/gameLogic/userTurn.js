@@ -4,6 +4,13 @@ import {calculateScore} from './updateScore.js';
 
 const prompt = promptSync();
 
+/**
+ * Emulates the turn of the player by calculating scores based on input
+ * Checks for incorrect or too much input too
+ * @param {number} userPrompt the user's input value
+ * @param {object} stats statisitics of the actual game
+ * @return {void} returns nothing and clears console
+ */
 const takeTurn = (userPrompt, stats) => {
   const error = isTurnValid(userPrompt, stats);
 

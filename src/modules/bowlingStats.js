@@ -1,3 +1,8 @@
+/**
+ * Main object of the game which stores the current result of it
+ * @return {object} an object wit all essential data for the game and
+ * A function to re-initialize it
+ */
 const createGameStats = () => {
   return {
     actualFrames: 1,

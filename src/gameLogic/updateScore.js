@@ -1,4 +1,10 @@
 import {isSpare, isStrike} from '../utils/turnHelpers.js';
+
+/**
+ * Calculate the total score of all frames after the game is finished
+ * @param {Array} data an array that contains all the user's inputs
+ * @return {Array} returns an array with total score of each frame
+ */
 const calculateTotalScore = (data) => {
   const filteredData = data.filter((e) => e !== 0);
   const result = [];
@@ -37,6 +43,14 @@ const calculateTotalScore = (data) => {
   return result;
 };
 
+
+/**
+ * Calculate scores of each frame
+ * @param {Array} data an array that contains all the user's inputs
+ * @return {number} returns an number with the total score
+ * @bug Might show incorrect score if a strike or spare in the middle frames 
+ * But recalculate it after the next 2 or 3 try are given 
+ */
 const calculateScore = (stats) => {
   let sum = 0;
   const pinsZero = stats.pins.filter((e) => e !== 0);
