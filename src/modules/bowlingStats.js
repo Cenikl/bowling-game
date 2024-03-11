@@ -29,4 +29,3 @@ const createGameStats = () => {
 
 const bowlingGame = createGameStats();
 export {bowlingGame};
-
