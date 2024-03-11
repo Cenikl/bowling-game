@@ -119,7 +119,7 @@ This project use GitHub Actions for continuous integration (CI).<br>These workfl
 
 ## CI Workflow :
 
-The CI workflow runs whenever changes are pushed to the repository or pull requests are opened. It performs the following tasks:
+The CI workflow runs whenever changes are pushed to the repository or pull requests are opened on the main branch. It performs the following tasks:
 
 - Installs project dependencies
 - Runs linting to enforce code quality
