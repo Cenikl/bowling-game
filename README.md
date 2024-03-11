@@ -16,7 +16,7 @@ Welcome to the Bowling Command Line App! This is a simple command-line applicati
 # Installation 📦
 
 To run the app, you need to have Node.js 
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="NodeJs Logo" width="30" height="30"> installed on your machine.
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="NodeJs Logo" width="30" height="30"> installed on your device.
 
 1. **Windows:**
    - Visit the [official Node.js website](https://nodejs.org/).
@@ -103,7 +103,7 @@ This project use ESLint for linting and Jest for testing.
 
 <br>The ESLint configuration file can be found in the root directory of the project. To run ESLint and check for linting errors, execute the following command:
 
-    npm start
+    npm run lint
 
 ### Jest
 
@@ -119,7 +119,7 @@ This project use GitHub Actions for continuous integration (CI).<br>These workfl
 
 ## CI Workflow :
 
-The CI workflow runs whenever changes are pushed to the repository or pull requests are opened. It performs the following tasks:
+The CI workflow runs whenever changes are pushed to the repository or pull requests are opened on the main branch. It performs the following tasks:
 
 - Installs project dependencies
 - Runs linting to enforce code quality
