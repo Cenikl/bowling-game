@@ -24,11 +24,10 @@ jobs:
 
       - name: Testing
         run: npm run test
-
       - name: Check code coverage
         run: |
           # Parse coverage report and extract coverage percentage
-          coverage=$(npx istanbul report --root coverage/json coverage/json/coverage-final.json | grep -oP '(?<="statements":).*?(?=,)')
+          coverage=$(npx jest --coverageReporters=json-summary | jq -r '.total.lines.pct')
           # Compare coverage against threshold
           if (( $(echo "$coverage >= 80" | bc -l) )); then
             echo "Coverage is above 80% ($coverage%)"
