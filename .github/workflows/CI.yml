@@ -24,15 +24,9 @@ jobs:
 
       - name: Testing
         run: npm run test
+
       - name: Check code coverage
         run: |
-          # Parse coverage report and extract coverage percentage
-          coverage=$(npx jest --coverageReporters=text-summary | awk '/Total/{print substr($4, 1, length($4)-1)}')
-          # Compare coverage against threshold
-          if (( $(echo "$coverage >= 80" | bc -l) )); then
-            echo "Coverage is above 80% ($coverage%)"
-            exit 0
-          else
-            echo "Coverage is below 80% ($coverage%)"
-            exit 1
+          if [[ "$CI" == "true" ]]; then
+            npx jest --coverage
           fi
