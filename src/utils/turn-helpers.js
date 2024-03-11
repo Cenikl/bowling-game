@@ -1,5 +1,5 @@
 import {InvalidInput} from '../errors/invalidInputs.js';
-import {calculateScore} from '../gameLogic/updateScore.js';
+import {calculateScore} from '../logic/update-score.js';
 import promptSync from 'prompt-sync';
 
 const prompt = promptSync();

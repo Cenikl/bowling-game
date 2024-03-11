@@ -1,6 +1,6 @@
 import promptSync from 'prompt-sync';
-import {gameMenu} from './gameLogic/bownlingGame.js';
-import {isValidcommand} from './utils/commandHelpers.js';
+import {gameMenu} from './logic/bowling-game.js';
+import {isValidcommand} from './utils/command-helpers.js';
 const prompt = promptSync();
 
 /**

@@ -1,9 +1,9 @@
 import promptSync from 'prompt-sync';
-import {takeTurn} from './userTurn.js';
-import {bowlingGame} from '../modules/bowlingStats.js';
-import {createGrid} from '../interfaces/createInterface.js';
-import {calculateScore} from './updateScore.js';
-import {isGameCommandValid} from '../utils/turnHelpers.js';
+import {takeTurn} from './user-turn.js';
+import {bowlingGame} from '../modules/bowling-stats.js';
+import {createGrid} from '../interfaces/create-interface.js';
+import {calculateScore} from './update-score.js';
+import {isGameCommandValid} from '../utils/turn-helpers.js';
 
 const userInput = promptSync();
 

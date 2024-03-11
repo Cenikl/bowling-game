@@ -1,6 +1,6 @@
 import {isGameCommandValid,
-  isTurnValid, isTurnStrike, isTurnSpare} from '../../src/utils/turnHelpers.js';
-import {bowlingGame} from '../../src/modules/bowlingStats.js';
+  isTurnValid, isTurnStrike, isTurnSpare} from '../../src/utils/turn-helpers.js';
+import {bowlingGame} from '../../src/modules/bowling-stats.js';
 import {InvalidInput} from '../../src/errors/invalidInputs.js';
 
 describe('User takes turn with inputs', () => {

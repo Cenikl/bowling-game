@@ -1,6 +1,6 @@
-import {calculateScore} from '../../src/gameLogic/updateScore.js';
-import {makeSpare, makeStrike, normalThrow} from '../../src/utils/turnHelpers.js';
-import {bowlingGame} from '../../src/modules/bowlingStats.js';
+import {calculateScore} from '../../src/logic/update-score.js';
+import {makeSpare, makeStrike, normalThrow} from '../../src/utils/turn-helpers.js';
+import {bowlingGame} from '../../src/modules/bowling-stats.js';
 
 describe('Calculate the score of the game', () => {
   beforeEach(() => {

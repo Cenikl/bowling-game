@@ -3,8 +3,8 @@ import {
   makeSpare,
   isTurnValid,
   makeStrike,
-} from '../utils/turnHelpers.js';
-import {calculateScore} from './updateScore.js';
+} from '../utils/turn-helpers.js';
+import {calculateScore} from './update-score.js';
 
 /**
  * Emulates the turn of the player by calculating scores based on input

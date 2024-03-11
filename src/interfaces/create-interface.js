@@ -2,7 +2,7 @@ import {
   createLine,
   createSequenceRow,
   createSequenceTitle,
-} from '../utils/interfaceHelpers.js';
+} from '../utils/interface-helpers.js';
 
 const titles = ['1', '2', '3', '4', '5'];
 

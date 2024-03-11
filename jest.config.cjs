@@ -2,7 +2,7 @@ module.exports = {
     moduleFileExtensions: ['js', 'jsx', 'json', 'node'],
     testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
     coveragePathIgnorePatterns: [
-      '/src/utils/turnHelpers.js'
+      '/src/utils/turn-helpers.js'
     ],
     transform: {
       '^.+\\.js$': 'babel-jest'
