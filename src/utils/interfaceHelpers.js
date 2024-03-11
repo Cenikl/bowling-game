@@ -5,14 +5,12 @@
  */
 const createLine = (length) => '-'.repeat(length);
 
-
 /**
  * Create blank spaces which depends on length provided
  * @param {number} length - total length of the blank space
  * @return {String} a string of blank spaces
  */
 const createBlank = (length) => ' '.repeat(length);
-
 
 /**
  * Create the sequence of all the user's input
@@ -22,12 +20,11 @@ const createBlank = (length) => ' '.repeat(length);
 const createSequenceRow = (data) => {
   let result = ``;
   data.forEach((e) => {
-    
-    if(e.toString() === "strike"){
+    if (e.toString() === 'strike') {
       result += `|${createBlank(1)} X ${createBlank(1)}`;
-    }else if (e.toString() === "strike"){
+    } else if (e.toString() === 'strike') {
       result += `|${createBlank(1)} / ${createBlank(1)}`;
-    }else if (e.toString().length === 2) {
+    } else if (e.toString().length === 2) {
       result += `|${createBlank(1)}${e} ${createBlank(1)}`;
     } else {
       result += `|${createBlank(1)} ${e} ${createBlank(1)}`;

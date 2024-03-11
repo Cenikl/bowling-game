@@ -9,7 +9,7 @@ const prompt = promptSync();
  * @return {void} return nothing
  */
 function showMainMenu() {
-  console.clear()
+  console.clear();
   console.log(`
     Welcome to the Bowling game simulator !
     Choose one of the following command :`);
@@ -22,19 +22,17 @@ function showMainMenu() {
     const input = prompt('Input : ');
 
     try {
-      if(isValidcommand(input)){
-        console.clear()
-        mainGame()
-      }
-      else if(!isValidcommand(input)){
+      if (isValidcommand(input)) {
+        console.clear();
+        mainGame();
+      } else if (!isValidcommand(input)) {
         return false;
       }
     } catch (error) {
-      console.clear()
+      console.clear();
       console.error('Error:', error.message);
+    }
   }
-  
-} 
 }
 
 showMainMenu();

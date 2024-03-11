@@ -1,8 +1,10 @@
-import promptSync from 'prompt-sync';
-import {normalThrow, makeSpare, isTurnValid, makeStrike} from '../utils/turnHelpers.js';
+import {
+  normalThrow,
+  makeSpare,
+  isTurnValid,
+  makeStrike,
+} from '../utils/turnHelpers.js';
 import {calculateScore} from './updateScore.js';
-
-const prompt = promptSync();
 
 /**
  * Emulates the turn of the player by calculating scores based on input
@@ -12,18 +14,17 @@ const prompt = promptSync();
  * @return {void} returns nothing and clears console
  */
 const takeTurn = (userPrompt, stats) => {
-
   try {
-    isTurnValid(userPrompt,stats)
+    isTurnValid(userPrompt, stats);
   } catch (error) {
-    console.clear()
+    console.clear();
     console.error('Error:', error.message);
-    return ;
+    return;
   }
-    normalThrow(userPrompt,stats);
-    makeStrike(userPrompt,stats);
-    makeSpare(userPrompt,stats);
-    
+  normalThrow(userPrompt, stats);
+  makeStrike(userPrompt, stats);
+  makeSpare(userPrompt, stats);
+
   if (stats.actualTries > 3) {
     stats.actualScore = calculateScore(stats);
     stats.actualTries = 1;
@@ -31,7 +32,6 @@ const takeTurn = (userPrompt, stats) => {
     stats.actualFrames++;
     return;
   }
-  
 };
 
 export {takeTurn};
