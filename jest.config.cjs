@@ -10,6 +10,10 @@ module.exports = {
     testEnvironment: 'node',
     coverageDirectory: 'coverage',
     collectCoverage: true, 
-    coverageReporters: ['text-summary', 'lcov']
-    
+    coverageReporters: ['text-summary', 'lcov'],
+    coverageThreshold: {
+      global: {
+        statements: 80
+      }
+    }
 };
