@@ -1,6 +1,6 @@
 import promptSync from 'prompt-sync';
 import {mainGame} from './gameLogic/bownlingGame.js';
-
+import {isValidcommand} from './utils/commandHelpers.js';
 const prompt = promptSync();
 
 /**
@@ -21,17 +21,16 @@ function showMainMenu() {
         `);
     const input = prompt('Input : ');
 
-    if (input == 1) {
-      mainGame();
-      console.clear();
-    } else if (input == 2) {
-      console.clear();
-      return false;
-    } else {
-      console.clear();
-      console.log('Please enter a valid command :');
-    }
+    try {
+      if(!isValidcommand(input)){
+        return false;
+      }
+    } catch (error) {
+      console.clear()
+      console.error('Error:', error.message);
   }
+  
+} 
 }
 
 showMainMenu();

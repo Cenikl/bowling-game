@@ -1,14 +1,16 @@
+import {InvalidInput} from '../errors/invalidInputs.js'
 
-
-function isCommandValid(input){
-    if (input.toUpperCase() === 'Y') {
-        bowlingGame.initialize();
-        console.clear();
-      } else if (answer.toUpperCase() === 'N') {
-        bowlingGame.initialize();
-        return false;
-      } else {
-        console.clear();
-        console.log('Invalid command, please try again !');
-      }
+const isValidcommand = (input) => {
+  if (input == 1) {
+    mainGame();
+    console.clear();
+  } else if (input == 2) {
+    console.clear();
+    return false;
+  } else {
+    console.clear();
+    throw new InvalidInput("Please enter a valid command ");
+  }
+    
 }
+export { isValidcommand }
