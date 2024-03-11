@@ -5,7 +5,7 @@ import {createGrid} from '../interfaces/createInterface.js';
 import {calculateScore} from './updateScore.js';
 import {isGameCommandValid} from '../utils/turnHelpers.js';
 
-const prompt = promptSync();
+const userInput = promptSync();
 
 /**
  * Gives an interface to view his score and input pins to be knocked.
@@ -13,7 +13,7 @@ const prompt = promptSync();
  * Calculte scores and show results
  * @return {void} returns nothing, going back to main menu
  */
-function mainGame() {
+function gameMenu() {
   console.clear();
   console.log('Game started !');
 
@@ -30,7 +30,7 @@ function mainGame() {
         '\n' +
         `--------------------------------------------`,
     );
-    const input = prompt('Number of pins struck: ');
+    const input = userInput('Number of pins struck: ');
     takeTurn(input, bowlingGame);
     while (bowlingGame.actualFrames >= 6) {
       const result = calculateScore(bowlingGame).total;
@@ -38,7 +38,7 @@ function mainGame() {
       console.log('Final score : ' + bowlingGame.actualScore);
       console.log('--------------------------------------------');
 
-      const answer = prompt('Start a new game ? (Y/N) : ');
+      const answer = userInput('Start a new game ? (Y/N) : ');
       try {
         if (!isGameCommandValid(answer, bowlingGame)) {
           console.clear();
@@ -51,4 +51,4 @@ function mainGame() {
   }
 }
 
-export {mainGame};
+export {gameMenu};

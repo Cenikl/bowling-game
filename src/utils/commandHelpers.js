@@ -1,5 +1,10 @@
 import {InvalidInput} from '../errors/invalidInputs.js';
 
+/**
+ * Checks if the command of the main menu is valid
+ * @param {string} input a string which contains the user's command
+ * @return {boolean} True or false or invalid input error
+ */
 const isValidcommand = (input) => {
   if (input == '1') {
     return true;

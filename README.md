@@ -9,7 +9,6 @@ Welcome to the Bowling Command Line App! This is a simple command-line applicati
 - [Installation](#installation) 📦
 - [How to use](#usage) 📝
 - [Features](#features) 🌟
-- 
 - [Development Tools](#tools) 🛠️
 - [Workflows](#continuous-integration-and-deployment-cicd) 🔄
 
