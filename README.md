@@ -108,7 +108,7 @@ This project use ESLint for linting and Jest for testing.
 
 ### Jest
 
-- **Jest:** Jest is used for testing and make code coverage in this project. Test files are located in the `tests` directory. To run the tests, use the following command:
+- **Jest:** Jest is used for testing and make code coverage in this project. Test files are located in the `tests` directory. To run the tests, use the following command, coverage should always be above 80%:
 
     ```bash
     npm test

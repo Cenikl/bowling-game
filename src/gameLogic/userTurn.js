@@ -26,7 +26,7 @@ const takeTurn = (userPrompt, stats) => {
   makeSpare(userPrompt, stats);
 
   if (stats.actualTries > 3) {
-    stats.actualScore = calculateScore(stats);
+    stats.actualScore = calculateScore(stats).score;
     stats.actualTries = 1;
     stats.totalPins = 15;
     stats.actualFrames++;

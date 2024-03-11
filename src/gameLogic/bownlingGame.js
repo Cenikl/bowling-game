@@ -2,7 +2,7 @@ import promptSync from 'prompt-sync';
 import {takeTurn} from './userTurn.js';
 import {bowlingGame} from '../modules/bowlingStats.js';
 import {createGrid} from '../interfaces/createInterface.js';
-import {calculateTotalScore} from './updateScore.js';
+import {calculateScore} from './updateScore.js';
 import {isGameCommandValid} from '../utils/turnHelpers.js';
 
 const prompt = promptSync();
@@ -33,7 +33,7 @@ function mainGame() {
     const input = prompt('Number of pins struck: ');
     takeTurn(input, bowlingGame);
     while (bowlingGame.actualFrames >= 6) {
-      const result = calculateTotalScore(bowlingGame.pins);
+      const result = calculateScore(bowlingGame).total;
       createGrid(bowlingGame.pins, result);
       console.log('Final score : ' + bowlingGame.actualScore);
       console.log('--------------------------------------------');
