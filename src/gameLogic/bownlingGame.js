@@ -34,6 +34,7 @@ function mainGame() {
       const answer = prompt('Start a new game ? (Y/N) : ');
       try {
         if(!isGameCommandValid(answer,bowlingGame)){
+          console.clear()
           return false
         }
       } catch (error) {

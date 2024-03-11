@@ -63,11 +63,11 @@ function isTurnValid(input, data) {
 }
 
 function isGameCommandValid(input,game){
-  if (input.toUpperCase() === 'Y') {
+  if (input.toString().toUpperCase() === 'Y') {
       game.initialize();
       console.clear();
       return true;
-    } else if (input.toUpperCase() === 'N') {
+    } else if (input.toString().toUpperCase() === 'N') {
       game.initialize();
       return false;
     } else {

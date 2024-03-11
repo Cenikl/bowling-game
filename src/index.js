@@ -22,7 +22,11 @@ function showMainMenu() {
     const input = prompt('Input : ');
 
     try {
-      if(!isValidcommand(input)){
+      if(isValidcommand(input)){
+        console.clear()
+        mainGame()
+      }
+      else if(!isValidcommand(input)){
         return false;
       }
     } catch (error) {

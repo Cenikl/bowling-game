@@ -1,11 +1,9 @@
 import {InvalidInput} from '../errors/invalidInputs.js'
 
 const isValidcommand = (input) => {
-  if (input == 1) {
-    mainGame();
-    console.clear();
-  } else if (input == 2) {
-    console.clear();
+  if (input == "1") {
+    return true;
+  } else if (input == "2") {
     return false;
   } else {
     console.clear();
