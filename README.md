@@ -1,4 +1,4 @@
-# Bowling Command Line App <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo" width="50"> 🎳
+# Bowling Command Line App <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo" width="30" height="30"> 🎳
 
 Welcome to the Bowling Command Line App! This is a simple command-line application written in JavaScript that allows you to play a simple game of bowling.<br>
 
@@ -9,13 +9,15 @@ Welcome to the Bowling Command Line App! This is a simple command-line applicati
 - [Installation](#installation) 📦
 - [How to use](#usage) 📝
 - [Features](#features) 🌟
+- 
 - [Development Tools](#tools) 🛠️
+- [Workflows](#continuous-integration-and-deployment-cicd) 🔄
 
 
 # Installation 📦
 
 To run the app, you need to have Node.js 
-![Node.js Logo](https://nodejs.org/static/images/logo.svg) installed on your machine.
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png" alt="NodeJs Logo" width="30" height="30"> installed on your machine.
 
 1. **Windows:**
    - Visit the [official Node.js website](https://nodejs.org/).
@@ -106,11 +108,27 @@ This project use ESLint for linting and Jest for testing.
 
 ### Jest
 
-- **Jest:** Jest is used for testing in this project. Test files are located in the `tests` directory. To run the tests, use the following command:
+- **Jest:** Jest is used for testing and make code coverage in this project. Test files are located in the `tests` directory. To run the tests, use the following command:
 
     ```bash
     npm test
     ```
+# Continuous Integration and Deployment (CI/CD) 🔄
 
+This project use GitHub Actions for continuous integration (CI).<br>These workflows automate various tasks such as testing, linting, and deployment to ensure the project's codebase is consistent, reliable, and deployable.
+
+
+## CI Workflow :
+
+The CI workflow runs whenever changes are pushed to the repository or pull requests are opened. It performs the following tasks:
+
+- Installs project dependencies
+- Runs linting to enforce code quality
+- Executes unit tests to verify code functionality
+
+You can view the full CI workflow definition in [`.github/workflows/CI.yml`](.github/workflows/CI.yml).
+
+### CD Workflow :
+ 🚧 - Not implemented yet...
 
 

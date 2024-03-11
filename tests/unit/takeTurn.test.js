@@ -1,9 +1,18 @@
-import {isGameCommandValid, isTurnValid} from '../../src/utils/turnHelpers.js';
+import {isGameCommandValid, isTurnValid,isTurnStrike,isTurnSpare} from '../../src/utils/turnHelpers.js';
 import {bowlingGame} from '../../src/modules/bowlingStats.js';
 import {InvalidInput} from '../../src/errors/invalidInputs.js';
 
 describe('User takes turn with inputs', () => {
-  bowlingGame.initialize();
+  beforeEach(() => {
+    bowlingGame.initialize();
+  });
+  it('should be a strike', () => {
+    expect(isTurnStrike(15, bowlingGame.actualTries)).toEqual(true);
+  });
+  it('should be a spare', () => {
+    expect(isTurnSpare(0, bowlingGame.actualTries = 2)).toEqual(true);
+    expect(isTurnSpare(0, bowlingGame.actualTries = 3)).toEqual(true);
+  });
   it('throws InvalidInput for non-number input', () => {
     expect(isTurnValid(3, bowlingGame)).toEqual(true);
   });

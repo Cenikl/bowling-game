@@ -1,8 +1,8 @@
 {
   "name": "bowling-game",
   "version": "1.0.0",
-  "description": "A simple intuitive bownling game",
-  "main": "main.js",
+  "description": "A simple command-line bownling game",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "npx jest",

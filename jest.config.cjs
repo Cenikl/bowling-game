@@ -3,5 +3,8 @@ module.exports = {
     testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
     transform: {
       '^.+\\.js$': 'babel-jest'
-    }
+    },
+    testEnvironment: 'node',
+    coverageDirectory: 'coverage',
+    collectCoverage: true
 };
